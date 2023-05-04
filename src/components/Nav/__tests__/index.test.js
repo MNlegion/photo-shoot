@@ -24,5 +24,14 @@ describe("Nav component", () => {
   
     expect(getByLabelText('camera')).toHaveTextContent('📸');
     });
+  });
+
+  describe('links are visible to end user', () => {
+    it('inserts text into the links', () => {
+      const { getByTestId } = render(<Nav />);
+
+      expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+      expect(getByTestId('about')).toHaveTextContent('About Me');
+    });
   })
 });
